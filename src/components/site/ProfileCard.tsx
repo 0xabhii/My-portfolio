@@ -1,4 +1,4 @@
-import avatar from "@/assets/avatar.jpg";
+import portrait from "@/assets/abhijeet_portrait.png.asset.json";
 import { profile, socials } from "@/data/portfolio";
 import { SocialIcon } from "./SocialIcon";
 
@@ -10,11 +10,11 @@ export function ProfileCard() {
         <div className="flex items-center gap-5">
           <div className="brutal-sm shadow-volt size-24 shrink-0 overflow-hidden rounded-full md:size-28">
             <img
-              src={avatar}
-              alt={`${profile.name} avatar`}
-              width={1024}
-              height={1024}
-              className="size-full object-cover"
+              src={portrait.url}
+              alt={`${profile.name} portrait`}
+              width={1131}
+              height={1391}
+              className="size-full object-cover object-top"
             />
           </div>
           <div>
