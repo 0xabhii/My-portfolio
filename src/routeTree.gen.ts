@@ -10,33 +10,91 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ExperienceRouteImport } from './routes/experience'
+import { Route as HighlightsRouteImport } from './routes/highlights'
+import { Route as SpacesRouteImport } from './routes/spaces'
+import { Route as WorkRouteImport } from './routes/work'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExperienceRoute = ExperienceRouteImport.update({
+  id: '/experience',
+  path: '/experience',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HighlightsRoute = HighlightsRouteImport.update({
+  id: '/highlights',
+  path: '/highlights',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SpacesRoute = SpacesRouteImport.update({
+  id: '/spaces',
+  path: '/spaces',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkRoute = WorkRouteImport.update({
+  id: '/work',
+  path: '/work',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/experience': typeof ExperienceRoute
+  '/highlights': typeof HighlightsRoute
+  '/spaces': typeof SpacesRoute
+  '/work': typeof WorkRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/experience': typeof ExperienceRoute
+  '/highlights': typeof HighlightsRoute
+  '/spaces': typeof SpacesRoute
+  '/work': typeof WorkRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/experience': typeof ExperienceRoute
+  '/highlights': typeof HighlightsRoute
+  '/spaces': typeof SpacesRoute
+  '/work': typeof WorkRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    '/' | '/contact' | '/experience' | '/highlights' | '/spaces' | '/work'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/contact' | '/experience' | '/highlights' | '/spaces' | '/work'
+  id:
+    | '__root__'
+    | '/'
+    | '/contact'
+    | '/experience'
+    | '/highlights'
+    | '/spaces'
+    | '/work'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactRoute: typeof ContactRoute
+  ExperienceRoute: typeof ExperienceRoute
+  HighlightsRoute: typeof HighlightsRoute
+  SpacesRoute: typeof SpacesRoute
+  WorkRoute: typeof WorkRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +106,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experience': {
+      id: '/experience'
+      path: '/experience'
+      fullPath: '/experience'
+      preLoaderRoute: typeof ExperienceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/highlights': {
+      id: '/highlights'
+      path: '/highlights'
+      fullPath: '/highlights'
+      preLoaderRoute: typeof HighlightsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/spaces': {
+      id: '/spaces'
+      path: '/spaces'
+      fullPath: '/spaces'
+      preLoaderRoute: typeof SpacesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work': {
+      id: '/work'
+      path: '/work'
+      fullPath: '/work'
+      preLoaderRoute: typeof WorkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactRoute: ContactRoute,
+  ExperienceRoute: ExperienceRoute,
+  HighlightsRoute: HighlightsRoute,
+  SpacesRoute: SpacesRoute,
+  WorkRoute: WorkRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

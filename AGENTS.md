@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- All portfolio copy, links and nav items live in `src/data/portfolio.ts`; pages only render it. Why: one place to edit content.
+- Each nav section is its own route file with its own `head()`. Why: shareable, crawlable pages instead of hash anchors.
+- Visual styles come from tokens and `@utility` classes (`brutal`, `shadow-<tone>`, etc.) in `src/styles.css`. Why: consistent design system, no ad hoc colors.
