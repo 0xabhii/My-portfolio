@@ -1,4 +1,4 @@
-# Vivid Creative Atlas
+# My Portfolio
 
 Help me building ts typa portfolio website the design theme should  be lil different make attractive if possibe i only want buttons for: Work, Experience, spaces, Highlight, contact
 
