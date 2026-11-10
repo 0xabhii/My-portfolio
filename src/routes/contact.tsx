@@ -15,7 +15,7 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
 });
 
-const tones: Tone[] = ["volt", "flare", "ice", "sun", "volt"];
+const tones: Tone[] = ["volt", "flare", "ice", "sun", "volt", "flare"];
 
 function ContactPage() {
   return (

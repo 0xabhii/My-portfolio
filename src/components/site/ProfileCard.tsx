@@ -36,7 +36,7 @@ export function ProfileCard() {
               target="_blank"
               rel="noreferrer"
               className={`brutal-sm brutal-lift shadow-ink flex items-center gap-3 rounded-xl bg-background px-4 py-3 font-mono text-sm transition-colors hover:bg-volt hover:text-on-color ${
-                i === socials.length - 1 ? "col-span-2" : ""
+                socials.length % 2 === 1 && i === socials.length - 1 ? "col-span-2" : ""
               }`}
             >
               <SocialIcon name={s.key} className="size-4 shrink-0" />

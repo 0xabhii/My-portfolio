@@ -41,6 +41,12 @@ export const socials = [
   },
   { key: "telegram", label: "Telegram", handle: "@abhi_web3_0", href: "https://t.me/abhi_web3_0" },
   { key: "github", label: "GitHub", handle: "0xabhii", href: "https://github.com/0xabhii" },
+  {
+    key: "email",
+    label: "Email",
+    handle: "abhije36@gmail.com",
+    href: "mailto:abhije36@gmail.com",
+  },
 ] as const;
 
 export type SocialKey = (typeof socials)[number]["key"];

@@ -2,7 +2,7 @@ import { QueryClient } from "@tanstack/react-query";
 import { createRouter, rootRouteId } from "@tanstack/react-router";
 import { describe, expect, it } from "vitest";
 
-import { navItems } from "@/data/portfolio";
+import { navItems, socials } from "@/data/portfolio";
 import { routeTree } from "@/routeTree.gen";
 
 describe("Portfolio navigation", () => {
